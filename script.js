@@ -208,8 +208,8 @@ const lastSectionAnimation = ()=>{
                   trigger: ".initiative-section",
                   scroller: ".main",
                   markers: false,
-                  start: "top 25%",
-                  end: "top 20%",
+                  start: "top 80%",
+                  end: "top 75%",
                   scrub: 3,
             }
       })
@@ -233,6 +233,21 @@ const lastSectionAnimation = ()=>{
             }
       })
 }
+
+function cursorAnimation() {
+      let cursor = document.querySelector(".cursor");
+      // let main = document.querySelector(".main");
+  
+      document.addEventListener("mousemove", (e) => {
+            gsap.to(cursor, {
+                duration: 0.5, // Duration of the animation
+                left: e.pageX , // Target left position
+                top: e.pageY , // Target top position
+                ease: "power2.out" // Easing function
+            });
+        });
+  }
+  cursorAnimation();
 
 
 
