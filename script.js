@@ -253,7 +253,7 @@ function cursorAnimation() {
             scrollTrigger: {
                   trigger: ".photo-animation",
                   scroller: ".main",
-                  markers: true,
+                  markers: false,
                   start: "top 5%",
                   end: "top 15%",
                   scrub: 3,
