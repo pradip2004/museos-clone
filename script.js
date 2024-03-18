@@ -247,14 +247,29 @@ function cursorAnimation() {
             });
         });
   }
-  cursorAnimation();
-
-
-
-
-
-
-
+ 
+  const polygonAnimation = ()=>{
+      gsap.timeline({
+            scrollTrigger: {
+                  trigger: ".photo-animation",
+                  scroller: ".main",
+                  markers: true,
+                  start: "top 5%",
+                  end: "top 15%",
+                  scrub: 3,
+            }
+        }).to('.clip', {
+            duration: 2,
+            keyframes: [
+              { clipPath: 'polygon(0% 0%, 100% 0%, 100% 70%, 100% 100%, 0 100%, 0 70%)' },
+              { clipPath: 'polygon(0% 0%, 100% 0%, 58% 70%, 58% 100%, 42% 100%, 42% 70%)' }
+            ],
+            ease: 'power1.inOut',
+            yoyo: true
+          });
+      
+  }
+  
 
 
 
@@ -266,3 +281,5 @@ historySectionAnimation();
 photoSectionAnimation();
 headingAnimation();
 lastSectionAnimation();
+cursorAnimation();
+polygonAnimation();
