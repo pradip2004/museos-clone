@@ -315,11 +315,7 @@ const descriptions = [
             left: "50%",
             top: "70%"
       },
-      {
-            text: "Finally, we see the presence of a steamship in the bay of Montevideo, the means of transportation by which immigrants arrived to colonize these lands.",
-            left: "50%",
-            top: "20%"
-      },
+      
       {
             text: "",
             position: ""
@@ -353,6 +349,32 @@ clipPaths.forEach((path, index) => {
       clipPathTimeline.to(".img-cover img", { clipPath: path, duration: 1 }, index * 3);
 
 });
+
+let sc = document.querySelector('.main-section')
+
+sc.addEventListener('mouseenter', ()=>{
+      document.querySelector('.cursor').style.backgroundColor = "#000";
+      document.querySelector('.cursor').textContent = "+";
+
+      gsap.to('.cursor',{
+            width: "40px",
+            height: "40px",
+            duration: 0.5,
+            ease: "power2.out"
+      })
+})
+
+sc.addEventListener('mouseleave', ()=>{
+      document.querySelector('.cursor').style.backgroundColor = "#fff";
+      document.querySelector('.cursor').textContent = "";
+      
+      gsap.to('.cursor',{
+            width: "20px",
+            height: "20px",
+            duration: 0.5,
+            ease: "power2.out"
+      })
+})
 
 
 
